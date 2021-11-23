@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Admin.Pages.ProductListPageLandscape"
+             BackgroundColor="{StaticResource BaseBackgroundColor}">
+  <ContentView.Content>
+        <StackLayout Padding="{StaticResource NormalMargin}"
+                     Spacing="{StaticResource NormalRowSpacing}">
+            <SearchBar Placeholder="Tìm kiếm sản phẩm"
+                       Margin="{StaticResource NormalMarginBottom}"/>
+
+            <!--<Button Text="Home"
+                    FontAttributes="Bold"
+                    Style="{StaticResource LoginButtonStyle}"
+                    CornerRadius="{StaticResource BigButtonCornerRadius}"
+                    Command="{Binding NavigateEditCommand}"/>-->
+
+            <Label Text="{Binding Receive}"
+                   x:Name="debugText"
+                   Style="{StaticResource BoldNormalLabelStyle}"/>
+
+            <ListView x:Name="ProductListView"
+                      ItemsSource="{Binding DataSource}" 
+                      VerticalScrollBarVisibility="Always" 
+                      HasUnevenRows="True"
+                      SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="{StaticResource NoPadding}"
+                                   Margin="{StaticResource NormalMarginBottom}"
+                                   CornerRadius="{StaticResource BaseCornerRadius}">
+                                <Grid Padding="{StaticResource SmallMargin}"
+                                      ColumnSpacing="{StaticResource SmallColumnSpacing}"
+                                      BackgroundColor="{StaticResource BaseWhiteColor}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="120"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Orientation="Vertical"
+                                                 Grid.Row="0" Grid.Column="0"
+                                                 Padding="{StaticResource NoPadding}"
+                                                 Spacing="{StaticResource SmallColumnSpacing}">
+                                        <Frame Padding="{StaticResource NoPadding}"
+                                               Margin="{StaticResource NoMargin}"
+                                               WidthRequest="80"
+                                               HeightRequest="80"
+                                               CornerRadius="{StaticResource BaseCornerRadius}">
+                                            <Image Source="{Binding Img}" 
+                                                   Aspect="AspectFill"/>
+                                        </Frame>
+                                        <Label Text="{Binding Category}"
+                                               HorizontalOptions="CenterAndExpand"
+                                               Style="{StaticResource BoldNormalLabelStyle}"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Vertical"
+                                                 Grid.Row="0" Grid.Column="1"
+                                                 Padding="{StaticResource NoPadding}"
+                                                 Spacing="{StaticResource SmallColumnSpacing}"
+                                                 HorizontalOptions="Start"
+                                                 VerticalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Name}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Giá:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Price}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="VNĐ"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Phụ kiện:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Accessories}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Vertical"
+                                                 Grid.Row="0" Grid.Column="2"
+                                                 Padding="{StaticResource NoPadding}"
+                                                 Spacing="{StaticResource SmallColumnSpacing}"
+                                                 HorizontalOptions="Start"
+                                                 VerticalOptions="CenterAndExpand">
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Thương hiệu:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Brand}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+                                        
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Xuất xứ:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Origin}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Bảo hành:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Insurance}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Vertical"
+                                                 Grid.Row="0" Grid.Column="3"
+                                                 Padding="{StaticResource NoPadding}"
+                                                 Spacing="{StaticResource SmallColumnSpacing}"
+                                                 HorizontalOptions="Start"
+                                                 VerticalOptions="CenterAndExpand">
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Style:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Style}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+                                        
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Kích thước:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Size}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="{StaticResource NoPadding}"
+                                                     Spacing="{StaticResource SmallColumnSpacing}">
+                                            <Label Text="Khối lượng:"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                            <Label Text="{Binding Weight}"
+                                                   Style="{StaticResource BoldNormalLabelStyle}"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Vertical"
+                                                 Grid.Row="0" Grid.Column="4"
+                                                 Padding="{StaticResource NoPadding}"
+                                                 Spacing="{StaticResource NormalRowSpacing}"
+                                                 HorizontalOptions="Start"
+                                                 VerticalOptions="CenterAndExpand">
+
+                                        <Button Text="SỬA"
+                                                FontAttributes="Bold"
+                                                WidthRequest="100"
+                                                HeightRequest="50"
+                                                CornerRadius="{StaticResource BaseButtonCornerRadius}"
+                                                CommandParameter=""
+                                                Command="{Binding NavigateEditCommand}"/>
+
+                                        <Button Text="XÓA"
+                                                FontAttributes="Bold"
+                                                WidthRequest="100"
+                                                HeightRequest="50"
+                                                CornerRadius="{StaticResource BaseButtonCornerRadius}"
+                                                Command="{Binding NavigateRemoveCommand}"
+                                                BindingContext="{Binding Source={x:Reference ProductListView}, Path=BindingContext}" 
+                                                CommandParameter="{Binding Id}"/>
+
+                                    </StackLayout>
+
+                                </Grid>
+                            </Frame>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

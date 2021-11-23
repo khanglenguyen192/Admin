@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d"
+                    x:Class="Admin.Base.Resources.Styles.Dimens">
+    <!--Base-->
+    <x:Double x:Key="NoMargin">0</x:Double>
+    <x:Double x:Key="NormalMargin">15</x:Double>
+    <x:Double x:Key="SmallMargin">10</x:Double>
+    <x:Double x:Key="TinyMargin">5</x:Double>
+    <x:Double x:Key="BigMargin">20</x:Double>
+    <x:Double x:Key="ExtraMargin">30</x:Double>
+    <x:Double x:Key="HugeMargin">36</x:Double>
+
+    <!--FontSize-->
+    <x:Double x:Key="SmallTextSize">12</x:Double>
+    <x:Double x:Key="NormalTextSize">18</x:Double>
+    <x:Double x:Key="TitleTextSize">16</x:Double>
+    <x:Double x:Key="NormalDescTextSize">22</x:Double>
+    <x:Double x:Key="BigDescTextSize">25</x:Double>
+    <x:Double x:Key="HugeTextSize">40</x:Double>
+
+    <!--Combined-->
+    <Thickness x:Key="SmallTopNormalBottom">0,5,0,10</Thickness>
+    <Thickness x:Key="SmallLeftRightBottomExtraTop">10,30,10,10</Thickness>
+    <Thickness x:Key="SmallLeftRightExtraTop">10,30,10,0</Thickness>
+    <Thickness x:Key="TinyTopBottomSmallRight">0,5,10,5</Thickness>
+    <Thickness x:Key="SmallLeftRightTinyTopBottom">10,5,10,5</Thickness>
+    <Thickness x:Key="SmallTopBottomTinyLeftRight">5,10,15,10</Thickness>
+    <Thickness x:Key="SmallLefTinyTopBottom">10,5,0,5</Thickness>
+    <Thickness x:Key="SmallLefExtraRight">10,0,30,0</Thickness>
+    <Thickness x:Key="SmallLefRightBottomTinyTop">10,5,10,10</Thickness>
+    <Thickness x:Key="NormalLefRightBottomSmallTop">15,10,15,15</Thickness>
+    <!--Extra-->
+    <Thickness x:Key="ExtraMarginLeft">30,0,0,0</Thickness>
+    <Thickness x:Key="ExtraMarginTop">0,30,0,0</Thickness>
+    <Thickness x:Key="ExtraMarginRight">0,0,30,0</Thickness>
+    <Thickness x:Key="ExtraMarginBottom">0,0,0,30</Thickness>
+
+    <Thickness x:Key="ExtraMarginTopBottom">0,30,0,30</Thickness>
+    <Thickness x:Key="ExtraMarginLeftRight">30,0,30,0</Thickness>
+
+    <Thickness x:Key="ExtraMarginLeftTop">30,30,0,0</Thickness>
+    <Thickness x:Key="ExtraMarginRightBottom">0,0,30,30</Thickness>
+    <Thickness x:Key="ExtraMarginLeftBottom">30,0,0,30</Thickness>
+    <Thickness x:Key="ExtraMarginTopRight">0,30,30,0</Thickness>
+
+    <Thickness x:Key="ExtraMarginLeftTopRight">30,30,30,0</Thickness>
+    <Thickness x:Key="ExtraMarginLeftRightBottom">30,0,30,30</Thickness>
+    <Thickness x:Key="ExtraMarginTopRightBottom">0,30,30,30</Thickness>
+    <Thickness x:Key="ExtraMarginLeftTopBottom">30,30,0,30</Thickness>
+
+    <!--Big-->
+    <Thickness x:Key="BigMarginLeft">20,0,0,0</Thickness>
+    <Thickness x:Key="BigMarginTop">0,20,0,0</Thickness>
+    <Thickness x:Key="BigMarginRight">0,0,20,0</Thickness>
+    <Thickness x:Key="BigMarginBottom">0,0,0,20</Thickness>
+
+    <Thickness x:Key="BigMarginTopBottom">0,20,0,20</Thickness>
+    <Thickness x:Key="BigMarginLeftRight">20,0,20,0</Thickness>
+
+    <Thickness x:Key="BigMarginLeftTop">20,20,0,0</Thickness>
+    <Thickness x:Key="BigMarginRightBottom">0,0,20,20</Thickness>
+    <Thickness x:Key="BigMarginLeftBottom">20,0,0,20</Thickness>
+    <Thickness x:Key="BigMarginTopRight">0,20,20,0</Thickness>
+
+    <Thickness x:Key="BigMarginLeftTopRight">20,20,20,0</Thickness>
+    <Thickness x:Key="BigMarginLeftRightBottom">20,0,20,20</Thickness>
+    <Thickness x:Key="BigMarginTopRightBottom">0,20,20,20</Thickness>
+    <Thickness x:Key="BigMarginLeftTopBottom">20,20,0,20</Thickness>
+
+    <!--Normal-->
+    <Thickness x:Key="NormalMarginLeft">15,0,0,0</Thickness>
+    <Thickness x:Key="NormalMarginTop">0,15,0,0</Thickness>
+    <Thickness x:Key="NormalMarginRight">0,0,15,0</Thickness>
+    <Thickness x:Key="NormalMarginBottom">0,0,0,15</Thickness>
+
+    <Thickness x:Key="NormalMarginTopBottom">0,15,0,15</Thickness>
+    <Thickness x:Key="NormalMarginLeftRight">15,0,15,0</Thickness>
+
+    <Thickness x:Key="NormalMarginLeftTop">15,15,0,0</Thickness>
+    <Thickness x:Key="NormalMarginRightBottom">0,0,15,15</Thickness>
+    <Thickness x:Key="NormalMarginLeftBottom">15,0,0,15</Thickness>
+    <Thickness x:Key="NormalMarginTopRight">0,15,15,0</Thickness>
+
+    <Thickness x:Key="NormalMarginLeftTopRight">15,15,15,0</Thickness>
+    <Thickness x:Key="NormalMarginLeftRightBottom">15,0,15,15</Thickness>
+    <Thickness x:Key="NormalMarginTopRightBottom">0,15,15,15</Thickness>
+    <Thickness x:Key="NormalMarginTopRightBottomForLabelTop">0,8,15,15</Thickness>
+    <Thickness x:Key="NormalMarginLeftTopBottom">15,15,0,15</Thickness>
+
+    <!--Small-->
+    <Thickness x:Key="SmallMarginLeft">10,0,0,0</Thickness>
+    <Thickness x:Key="SmallMarginTop">0,10,0,0</Thickness>
+    <Thickness x:Key="SmallMarginRight">0,0,10,0</Thickness>
+    <Thickness x:Key="SmallMarginBottom">0,0,0,10</Thickness>
+
+    <Thickness x:Key="SmallMarginTopBottom">0,10,0,10</Thickness>
+    <Thickness x:Key="SmallMarginLeftRight">10,0,10,0</Thickness>
+
+    <Thickness x:Key="SmallMarginLeftTop">10,10,0,0</Thickness>
+    <Thickness x:Key="SmallMarginRightBottom">0,0,10,10</Thickness>
+    <Thickness x:Key="SmallMarginLeftBottom">10,0,0,10</Thickness>
+    <Thickness x:Key="SmallMarginTopRight">0,10,10,0</Thickness>
+
+    <Thickness x:Key="SmallMarginLeftTopRight">10,10,10,0</Thickness>
+    <Thickness x:Key="SmallMarginLeftRightBottom">10,0,10,10</Thickness>
+    <Thickness x:Key="SmallMarginTopRightBottom">0,10,10,10</Thickness>
+    <Thickness x:Key="SmallMarginLeftTopBottom">10,10,0,10</Thickness>
+    <Thickness x:Key="NegativeSmallMarginTopRight">0,-10,-10,0</Thickness>
+
+    <!--Tiny-->
+    <Thickness x:Key="TinyMarginLeft">5,0,0,0</Thickness>
+    <Thickness x:Key="TinyMarginTop">0,5,0,0</Thickness>
+    <Thickness x:Key="TinyMarginRight">0,0,5,0</Thickness>
+    <Thickness x:Key="TinyMarginBottom">0,0,0,5</Thickness>
+
+    <Thickness x:Key="TinyMarginTopBottom">0,5,0,5</Thickness>
+    <Thickness x:Key="TinyMarginLeftRight">5,0,5,0</Thickness>
+
+    <CornerRadius x:Key="TinyMarginLeftTopCornerRadiusType">5,5,0,0</CornerRadius>
+    <CornerRadius x:Key="TinyMarginBottomCornerRadiusType">0,0,5,5</CornerRadius>
+    <Thickness x:Key="TinyMarginLeftTop">5,5,0,0</Thickness>
+    <Thickness x:Key="TinyMarginRightBottom">0,0,5,5</Thickness>
+    <Thickness x:Key="TinyMarginLeftBottom">5,0,0,5</Thickness>
+    <Thickness x:Key="TinyMarginTopRight">0,5,5,0</Thickness>
+
+    <Thickness x:Key="TinyMarginLeftTopRight">5,5,5,0</Thickness>
+    <Thickness x:Key="TinyMarginLeftRightBottom">5,0,5,5</Thickness>
+    <Thickness x:Key="TinyMarginTopRightBottom">0,5,5,5</Thickness>
+    <Thickness x:Key="TinyMarginLeftTopBottom">5,5,0,5</Thickness>
+    <Thickness x:Key="TinyLeftRightNormalTopBottom">5,15,5,15</Thickness>
+
+    <x:Single x:Key="NoCorner">0</x:Single>
+    <x:Single x:Key="SmallCornerRadius">4</x:Single>
+    <x:Single x:Key="BaseCornerRadius">6</x:Single>
+
+    <!--Spacing-->
+    <x:Double x:Key="SmallRowSpacing">5</x:Double>
+    <x:Double x:Key="SmallColumnSpacing">10</x:Double>
+    <x:Double x:Key="NormalRowSpacing">10</x:Double>
+    <x:Double x:Key="NormalColumnSpacing">10</x:Double>
+    <x:Double x:Key="BigRowSpacing">15</x:Double>
+    <x:Double x:Key="BigColumnSpacing">15</x:Double>
+
+    <!--Button-->
+    <x:Double x:Key="SmallButtonHeight">40</x:Double>
+    <x:Double x:Key="SmallButtonWidth">40</x:Double>
+    <x:Double x:Key="NormalButtonHeight">50</x:Double>
+    <x:Double x:Key="NormalButtonWidth">50</x:Double>
+    <x:Double x:Key="MediumButtonHeight">60</x:Double>
+    <x:Double x:Key="MediumButtonWidth">60</x:Double>
+    <x:Double x:Key="DoubleButtonHeight">110</x:Double>
+    <x:Int32 x:Key="BaseButtonCornerRadius">6</x:Int32>
+    <x:Int32 x:Key="BigButtonCornerRadius">20</x:Int32>
+
+    <!--Login Page-->
+    <x:Double x:Key="LoginPortraitWidth">300</x:Double>
+    <x:Double x:Key="LoginPortraitHeight">550</x:Double>
+    <x:Double x:Key="LoginLandscapeWidth">700</x:Double>
+    <x:Double x:Key="LoginLandscapeHeight">500</x:Double>
+
+    <!--Sign Up Page-->
+    <x:Double x:Key="SignUpPortraitWidth">300</x:Double>
+    <x:Double x:Key="SignUpPortraitHeight">700</x:Double>
+    <x:Double x:Key="SignUpLandscapeWidth">900</x:Double>
+    <x:Double x:Key="SignUpLandscapeHeight">600</x:Double>
+
+    <x:Double x:Key="NoPadding">0</x:Double>
+</ResourceDictionary>

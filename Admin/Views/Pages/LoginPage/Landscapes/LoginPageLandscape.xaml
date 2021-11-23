@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Admin.Pages.LoginPageLandscape"
+             BackgroundColor="{StaticResource BaseBackgroundColor}"
+             xmlns:img ="clr-namespace:Admin.Base.Images">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="{img:ImageResource Admin.Base.Resources.Images.eff_background_loginpage.png}"
+                   x:Name="imgBackground"
+                   Aspect="Fill"
+                   Grid.Row="0"/>
+            <Frame Grid.Row="0"
+                   BackgroundColor="{StaticResource BaseWhiteColor}"
+                   CornerRadius="{StaticResource BaseCornerRadius}"
+                   WidthRequest="{StaticResource LoginLandscapeWidth}"
+                   HeightRequest="{StaticResource LoginLandscapeHeight}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{img:ImageResource Admin.Base.Resources.Images.eff_login_logo.png}"
+                           Grid.Column="0"
+                           WidthRequest="250"
+                           HeightRequest="220"
+                           Aspect="Fill"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+                    <StackLayout Grid.Column="1"
+                                 Padding="{StaticResource SmallMargin}"
+                                 Spacing="{StaticResource NormalRowSpacing}">
+                        <Label Text="Login"
+                               HorizontalOptions="Center"
+                               FontSize="{StaticResource HugeTextSize}"
+                               Style="{StaticResource BoldNormalLabelStyle}"/>
+                        <StackLayout Padding="{StaticResource SmallMargin}"
+                                     Spacing="{StaticResource NormalRowSpacing}">
+                            <Label Text="Username"/>
+                            <Entry Placeholder="Enter Username"
+                                   Text="{Binding Account}"/>
+                            <Label Text="Password"/>
+                            <Entry Placeholder="Enter Password"
+                                   IsPassword="True"
+                                   Text="{Binding Password}"/>
+                            <Button Text="Forgot password?"
+                                    HorizontalOptions="End"
+                                    BackgroundColor="{StaticResource BaseWhiteColor}"
+                                    Padding="{StaticResource NoPadding}"
+                                    Margin="{StaticResource NoMargin}"/>
+                        </StackLayout>
+                        <Button Text="LOGIN"
+                                FontAttributes="Bold"
+                                Style="{StaticResource LoginButtonStyle}"
+                                CornerRadius="{StaticResource BigButtonCornerRadius}"
+                                Command="{Binding NavigateLoginCommand}"/>
+                        <Label Text="Or Sign In With"
+                               HorizontalOptions="Center"
+                               Margin="{StaticResource BigMarginTop}"/>
+                        <Grid HorizontalOptions="Center"
+                              ColumnSpacing="{StaticResource NormalColumnSpacing}"
+                              VerticalOptions="StartAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="35"/>
+                                <ColumnDefinition Width="35"/>
+                                <ColumnDefinition Width="35"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <!--<ImageButton Grid.Column="0"
+                                         Source="{img:ImageResource Admin.Base.Resources.Images.eff_facebook.png}"
+                                         Aspect="Fill"
+                                         WidthRequest="35" HeightRequest="35"
+                                         CornerRadius="20"/>
+                            <ImageButton Grid.Column="1"
+                                         Source="{img:ImageResource Admin.Base.Resources.Images.eff_twitter.png}"
+                                         Aspect="Fill"
+                                         WidthRequest="35" HeightRequest="35"
+                                         CornerRadius="20"/>
+                            <ImageButton Grid.Column="2"
+                                         Source="{img:ImageResource Admin.Base.Resources.Images.eff_google.png}"
+                                         WidthRequest="35" HeightRequest="35"
+                                         Aspect="Fill"
+                                         CornerRadius="20"/>-->
+                        </Grid>
+                        <Label Text="Do Not Have An Account?"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"/>
+                        <Button Text="SIGN UP"
+                                TextColor="{StaticResource PurpleButtonColor}"
+                                HorizontalOptions="Center"
+                                BackgroundColor="{StaticResource BaseWhiteColor}"
+                                Padding="{StaticResource NoPadding}"
+                                Margin="{StaticResource NoMargin}"
+                                Command="{Binding NavigateSignUpCommand}"
+                                FontAttributes="Bold"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

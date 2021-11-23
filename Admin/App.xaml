@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Admin.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary Source="Base/Resources/Styles/ControlStyles.xaml"/>
+            <ResourceDictionary Source="Base/Resources/Styles/Colors.xaml"/>
+            <ResourceDictionary Source="Base/Resources/Styles/Dimens.xaml"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

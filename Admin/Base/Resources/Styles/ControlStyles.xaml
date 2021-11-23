@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d"
+                    x:Class="Admin.Base.Resources.Styles.ControlStyles">
+    <ResourceDictionary>
+        <ResourceDictionary Source="Colors.xaml"/>
+        <ResourceDictionary Source="Dimens.xaml"/>
+    </ResourceDictionary>
+    <Style x:Key="NormalLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource NormalTextColor}"/>
+        <Setter Property="FontSize" Value="{StaticResource TitleTextSize}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="BoldNormalLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource NormalTextColor}"/>
+        <Setter Property="FontSize" Value="{StaticResource TitleTextSize}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="NomalButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="{StaticResource BaseWhiteColor}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Padding" Value="{StaticResource TinyMarginBottom}"/>
+        <Setter Property="HeightRequest" Value="{StaticResource NormalButtonHeight}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimaryRed}"/>
+        <Setter Property="CornerRadius" Value="{StaticResource BaseButtonCornerRadius}"/>
+    </Style>
+
+    <Style x:Key="LoginButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="{StaticResource BaseWhiteColor}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="{StaticResource TinyMarginBottom}"/>
+        <Setter Property="HeightRequest" Value="{StaticResource SmallButtonHeight}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource PurpleButtonColor}"/>
+        <Setter Property="CornerRadius" Value="{StaticResource BigButtonCornerRadius}"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d"
+                    x:Class="Admin.Base.Resources.Styles.Colors">
+
+    <Color x:Key="ColorGrayLight">#F5F5F5</Color>
+    <Color x:Key="ColorTextHeaderIcon">#5B5B5B</Color>
+    <Color x:Key="ColorGreenBorder">#00B024</Color>
+    <Color x:Key="ColorPrimaryRed">#FF554D</Color>
+    <Color x:Key="ColorGrayBtn">#B3B3B3</Color>
+    <Color x:Key="ColorGrayStroke">#CFCFCF</Color>
+    <Color x:Key="ColorBlueBg">#27B6FC</Color>
+    <Color x:Key="ColorEmpBg">#1EBEAC</Color>
+
+    <Color x:Key="NormalTextColor">Black</Color>
+    <Color x:Key="BaseBackgroundColor">#E1E1E1</Color>
+    <Color x:Key="BaseWhiteColor">White</Color>
+    <Color x:Key="BaseBlackColor">Black</Color>
+    <Color x:Key="KeyBoardColor">#192032</Color>
+    <Color x:Key="LoadingPageBackground">#50000000</Color>
+    <Color x:Key="SecondLoadingPageBackground">#80000000</Color>
+    <Color x:Key="KeyboardButtonColor">#403E44</Color>
+
+    <Color x:Key="TextBlueColor">#0084ff</Color>
+    <Color x:Key="TextRedColor">#e33939</Color>
+
+    <Color x:Key="PurpleButtonColor">#b38cb8</Color>
+    <Color x:Key="SignUpBlueColor">#5ca7c4</Color>
+</ResourceDictionary>
