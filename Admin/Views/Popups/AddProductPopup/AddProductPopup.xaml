@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="Admin.Popups.AddProductPopup"
+              xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+              xmlns:component="clr-namespace:Admin.Base.Widgets"
+              CloseWhenBackgroundIsClicked="False">
+    <ContentPage.Content>
+        <Frame VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Margin="{StaticResource PopupPageMargin}"
+               CornerRadius="{StaticResource BaseCornerRadius}"
+               Padding="{StaticResource BigMargin}"
+               BackgroundColor="{StaticResource BaseWhiteColor}"
+               HeightRequest="600"
+               WidthRequest="600">
+            <StackLayout Spacing="{StaticResource BigRowSpacing}">
+                <!--<Label Text="HELLO"
+                       x:Name="debugTest"/>-->
+
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Label" BasedOn="{StaticResource BoldNormalLabelStyle}">
+                            
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+
+                <Label Text="THÊM SẢM PHẨM"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Start"
+                       FontSize="22"/>
+
+                <Grid ColumnSpacing="{StaticResource NormalColumnSpacing}"
+                      RowSpacing="{StaticResource NormalRowSpacing}"
+                      HorizontalOptions="Center"
+                      VerticalOptions="StartAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="TÊN SẢN PHẨM"
+                           Grid.Row="0" Grid.Column="0"/>
+                    <Entry Grid.Row="0" Grid.Column="1"
+                           Placeholder="Nhập tên sản phẩm"
+                           Text="{Binding Name}"/>
+
+                    <Label Text="GIÁ"
+                           Grid.Row="1" Grid.Column="0"/>
+                    <Entry Grid.Row="1" Grid.Column="1"
+                           Placeholder="Nhập giá sản phẩm"
+                           Text="{Binding Price}"/>
+
+                    <Label Text="HÌNH ẢNH"
+                           Grid.Row="2" Grid.Column="0"/>
+                    <Entry Grid.Row="2" Grid.Column="1"
+                           Placeholder="Thêm ảnh cho sản phẩm"
+                           Text="{Binding Img}"/>
+
+                    <Label Text="THƯƠNG HIỆU"
+                           Grid.Row="3" Grid.Column="0"/>
+                    <Entry Grid.Row="3" Grid.Column="1"
+                           Placeholder="Nhập thương hiệu sản phẩm"
+                           Text="{Binding Brand}"/>
+
+                    <Label Text="XUẤT XỨ"
+                           Grid.Row="4" Grid.Column="0"/>
+                    <Entry Grid.Row="4" Grid.Column="1"
+                           Placeholder="Nhập xuất xứ sản phẩm"
+                           Text="{Binding Origin}"/>
+
+                    <Label Text="LOẠI"
+                           Grid.Row="5" Grid.Column="0"/>
+                    <Entry Grid.Row="5" Grid.Column="1"
+                           Placeholder="Nhập loại hình sản phẩm"
+                           Text="{Binding CategoryID}"/>
+
+                    <Label Text="CHẤT LIỆU"
+                           Grid.Row="6" Grid.Column="0"/>
+                    <Entry Grid.Row="6" Grid.Column="1"
+                           Placeholder="Nhập chất liệu sản phẩm"
+                           Text="{Binding Material}"/>
+
+                    <Label Text="STYLE"
+                           Grid.Row="7" Grid.Column="0"/>
+                    <Entry Grid.Row="7" Grid.Column="1"
+                           Placeholder="Nhập style"
+                           Text="{Binding Style}"/>
+
+                    <Label Text="KÍCH THƯỚC"
+                           Grid.Row="8" Grid.Column="0"/>
+                    <Entry Grid.Row="8" Grid.Column="1"
+                           Placeholder="Nhập kích thước sản phẩm"
+                           Text="{Binding Size}"/>
+
+                    <Label Text="KHỐI LƯỢNG"
+                           Grid.Row="9" Grid.Column="0"/>
+                    <Entry Grid.Row="9" Grid.Column="1"
+                           Placeholder="Nhập khối lượng sản phẩm"
+                           Text="{Binding Weight}"/>
+
+                    <Label Text="PHỤ KIỆN"
+                           Grid.Row="10" Grid.Column="0"/>
+                    <Entry Grid.Row="10" Grid.Column="1"
+                           Placeholder="Phụ kiện kèm theo sản phẩm"
+                           Text="{Binding Accessories}"/>
+
+                    <Label Text="BẢO HÀNH"
+                           Grid.Row="11" Grid.Column="0"/>
+                    <Entry Grid.Row="11" Grid.Column="1"
+                           Placeholder="Nhập thời gian bảo hành sản phẩm"
+                           Text="{Binding Insurance}"/>
+                </Grid>
+
+
+                    <Grid ColumnSpacing="{StaticResource NormalColumnSpacing}"
+                      RowSpacing="{StaticResource NormalRowSpacing}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="THÊM"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            Style="{StaticResource NormalButtonStyle}"
+                            Command="{Binding NavigateAddCommand}"/>
+
+                    <Button Text="HỦY"
+                            Grid.Column="1"
+                            FontAttributes="Bold"
+                            Style="{StaticResource NormalButtonStyle}"
+                            BackgroundColor="{StaticResource ColorGrayBtn}"
+                            TextColor="{StaticResource BaseBlackColor}"
+                            Command="{Binding NavigateCloseCommand}"/>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</rg:PopupPage>

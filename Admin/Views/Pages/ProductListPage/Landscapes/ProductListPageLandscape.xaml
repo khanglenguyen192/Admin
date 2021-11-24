@@ -9,18 +9,26 @@
             <SearchBar Placeholder="Tìm kiếm sản phẩm"
                        Margin="{StaticResource NormalMarginBottom}"/>
 
-            <!--<Button Text="Home"
+            <Button Text="Home"
                     FontAttributes="Bold"
                     Style="{StaticResource LoginButtonStyle}"
                     CornerRadius="{StaticResource BigButtonCornerRadius}"
-                    Command="{Binding NavigateEditCommand}"/>-->
+                    Clicked="AddProductClicked"/>
 
-            <Label Text="{Binding Receive}"
-                   x:Name="debugText"
-                   Style="{StaticResource BoldNormalLabelStyle}"/>
-
+            <StackLayout Orientation="Horizontal"
+                         Padding="{StaticResource NoPadding}"
+                         Spacing="{StaticResource SmallColumnSpacing}"
+                         HorizontalOptions="Start"
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="Tổng số sản phẩm:"
+                       Style="{StaticResource BoldNormalLabelStyle}"/>
+                <Label Text="{Binding Receive}"
+                       x:Name="debugText"
+                       Style="{StaticResource BoldNormalLabelStyle}"/>
+            </StackLayout>
+            
+            <!--ItemsSource="{Binding DataSource}"-->
             <ListView x:Name="ProductListView"
-                      ItemsSource="{Binding DataSource}" 
                       VerticalScrollBarVisibility="Always" 
                       HasUnevenRows="True"
                       SelectionMode="Single">
@@ -104,7 +112,7 @@
                                             <Label Text="{Binding Brand}"
                                                    Style="{StaticResource BoldNormalLabelStyle}"/>
                                         </StackLayout>
-                                        
+
                                         <StackLayout Orientation="Horizontal"
                                                      Padding="{StaticResource NoPadding}"
                                                      Spacing="{StaticResource SmallColumnSpacing}">
@@ -139,7 +147,7 @@
                                             <Label Text="{Binding Style}"
                                                    Style="{StaticResource BoldNormalLabelStyle}"/>
                                         </StackLayout>
-                                        
+
                                         <StackLayout Orientation="Horizontal"
                                                      Padding="{StaticResource NoPadding}"
                                                      Spacing="{StaticResource SmallColumnSpacing}">
@@ -172,23 +180,22 @@
                                                 WidthRequest="100"
                                                 HeightRequest="50"
                                                 CornerRadius="{StaticResource BaseButtonCornerRadius}"
-                                                CommandParameter=""
-                                                Command="{Binding NavigateEditCommand}"/>
+                                                CommandParameter="{Binding Id}"
+                                                Clicked="ItemEditClicked"/>
 
+                                        <!--Command="{Binding NavigateRemoveCommand}"
+                                                BindingContext="{Binding Source={x:Reference ProductListView}, Path=BindingContext}"-->
                                         <Button Text="XÓA"
                                                 FontAttributes="Bold"
                                                 WidthRequest="100"
                                                 HeightRequest="50"
                                                 CornerRadius="{StaticResource BaseButtonCornerRadius}"
-                                                Command="{Binding NavigateRemoveCommand}"
-                                                BindingContext="{Binding Source={x:Reference ProductListView}, Path=BindingContext}" 
+                                                Clicked="ItemRemoveClicked"
                                                 CommandParameter="{Binding Id}"/>
 
                                     </StackLayout>
-
                                 </Grid>
                             </Frame>
-                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -26,14 +26,18 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ViewModels\Popups\UpdateProductPopup\" />
     <Folder Include="Views\Pages\HomePage\Portraits\" />
     <Folder Include="Views\Pages\LoginPage\Portraits\" />
+    <Folder Include="Views\Pages\OrderPage\Portratis\" />
     <Folder Include="Views\Pages\ProductListPage\Portratis\" />
+    <Folder Include="Views\Popups\UpdateProductPopup\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,7 +56,13 @@
     <EmbeddedResource Update="Views\Pages\LoginPage\Landscapes\LoginPageLandscape.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\OrderPage\Landscapes\OrderPageLandscape.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Pages\ProductListPage\Landscapes\ProductListPageLandscape.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\AddProductPopup\AddProductPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

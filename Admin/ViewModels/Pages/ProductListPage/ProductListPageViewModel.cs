@@ -2,6 +2,7 @@
 using Admin.Base.ViewModels;
 using Admin.Models;
 using Admin.Pages;
+using Admin.Popups;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Admin.ViewModels
     {
         private const string Url = "http://localhost:5000/products";
 
-        public ObservableCollection<Product> DataSource { get; set; }
+        //public ObservableCollection<Product> DataSource { get; set; }
 
         private string _receive;
         public string Receive
@@ -32,24 +33,25 @@ namespace Admin.ViewModels
         public ProductListPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            GetListProducts();
-            MessagingCenter.Subscribe<ProductListPageViewModel, string>(this, "productList", (vm, responseContent) => {
-                if (!responseContent.Equals(string.Empty))
-                {
-                    List<Product> products = JsonConvert.DeserializeObject<List<Product>>(responseContent);
-                    DataSource = new ObservableCollection<Product>(products);
-                    Receive = DataSource.Count.ToString();
-                    for (int i = 0; i < DataSource.Count; i++)
-                    {
-                        DataSource[i].setCategory();
-                    }
-                }
-                else
-                {
-                    DataSource = new ObservableCollection<Product>();
-                }
+            //GetListProducts();
+            //MessagingCenter.Subscribe<ProductListPageViewModel, string>(this, "productList", (vm, responseContent) => {
+            //    if (!responseContent.Equals(string.Empty))
+            //    {
+            //        List<Product> products = JsonConvert.DeserializeObject<List<Product>>(responseContent);
+            //        DataSource = new ObservableCollection<Product>(products);
+            //        Receive = DataSource.Count.ToString();
+            //        //Receive = responseContent;
+            //        for (int i = 0; i < DataSource.Count; i++)
+            //        {
+            //            DataSource[i].setCategory();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        DataSource = new ObservableCollection<Product>();
+            //    }
 
-            });
+            //});
 
         }
 
@@ -70,35 +72,22 @@ namespace Admin.ViewModels
 
         public ICommand NavigateEditCommand => new Command(async () =>
         {
-            await _navigationService.NavigateAsync(nameof(HomePage));
+            //await _navigationService.NavigateAsync(nameof(AddProductPopup));
+            //await PopupNavigation.Instance.PushAsync(new AddProductPopup());
         });
 
         public ICommand NavigateRemoveCommand => new Command( (e) =>
         {
-            //MessagingCenter.Subscribe<ProductListPageViewModel, int>(this, "ProductListRemovedItem", (vm, removedItemId) =>
-            //{
-            //    for (int i = 0; i < DataSource.Count; i++)
-            //    {
-            //        if (DataSource[i].Id == removedItemId)
-            //        {
-            //            DataSource.RemoveAt(i);
-            //            break;
-            //        }
-            //    }
-            //});
-
             var item = (e as Product);
 
-            for (int i = 0; i < DataSource.Count; i++)
-            {
-                //if (DataSource[i].Id == item.Id)
-                //{
-                //    DataSource.RemoveAt(i);
-                //    break;
-                //}
-            }
-
-
+            //for (int i = 0; i < DataSource.Count; i++)
+            //{
+            //    //if (DataSource[i].Id == item.Id)
+            //    //{
+            //    //    DataSource.RemoveAt(i);
+            //    //    break;
+            //    //}
+            //}
         });
     }
 }

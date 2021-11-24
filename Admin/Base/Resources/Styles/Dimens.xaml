@@ -169,4 +169,11 @@
     <x:Double x:Key="SignUpLandscapeHeight">600</x:Double>
 
     <x:Double x:Key="NoPadding">0</x:Double>
+
+    <Thickness
+        x:Key="PopupPageMarginLeftRight">89,0,89,0</Thickness>
+
+    <Thickness
+        x:Key="PopupPageMargin">89,60,89,60</Thickness>
+
 </ResourceDictionary>

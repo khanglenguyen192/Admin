@@ -7,22 +7,22 @@ using Xamarin.Forms;
 
 namespace Admin.Pages
 {
-    public class HomePage : BaseContentPage
+    public class OrderPage : BaseContentPage
     {
-        public HomePage()
+        public OrderPage()
         {
             NavigationPage.SetHasNavigationBar(this, false);
-            this.BindingContext = new HomePageViewModel(App.NavigationService);
+            this.BindingContext = new OrderPageViewModel(App.NavigationService);
         }
 
         protected override void SetupLandscapeLayout()
         {
-            this.Content = new HomePageLandscape();
+            this.Content = new OrderPageLandscape();
         }
 
         protected override void SetupPortraitLayout()
         {
-            this.Content = new HomePageLandscape();
+            this.Content = new OrderPageLandscape();
         }
     }
 }

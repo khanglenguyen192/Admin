@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -14,6 +15,8 @@ namespace Admin.Base.Services
         private readonly Dictionary<string, Type> _pagesByKey = new Dictionary<string, Type>();
         private readonly Stack<NavigationPage> _navigationPageStack = new Stack<NavigationPage>();
         private NavigationPage CurrentNavigationPage => _navigationPageStack.Peek();
+
+        private readonly List<PopupPage> _popupStack = new List<PopupPage>();
 
         public string CurrentPageKey
         {

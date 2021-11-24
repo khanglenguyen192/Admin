@@ -21,7 +21,7 @@
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
-    <Style x:Key="NomalButtonStyle" TargetType="Button">
+    <Style x:Key="NormalButtonStyle" TargetType="Button">
         <Setter Property="TextColor" Value="{StaticResource BaseWhiteColor}"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Padding" Value="{StaticResource TinyMarginBottom}"/>

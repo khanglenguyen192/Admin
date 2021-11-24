@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Admin.ViewModels.Pages.HomePage
+namespace Admin.ViewModels
 {
     public class HomePageViewModel : BaseViewModel
     {
@@ -19,6 +19,11 @@ namespace Admin.ViewModels.Pages.HomePage
         public ICommand NavigateProductListCommand => new Command(async () =>
         {
             await _navigationService.NavigateAsync(nameof(ProductListPage));
+        });
+
+        public ICommand NavigateOrderCommand => new Command(async () =>
+        {
+            await _navigationService.NavigateAsync(nameof(OrderPage));
         });
     }
 }

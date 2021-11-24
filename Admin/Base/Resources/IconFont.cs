@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Admin.Base.Resources
+namespace Admin.Base.Widgets
 {
     public static class IconFont
     {

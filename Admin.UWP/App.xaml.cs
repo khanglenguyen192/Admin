@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 namespace Admin.UWP
 {
     /// <summary>
@@ -57,6 +58,9 @@ namespace Admin.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
                 Xamarin.Forms.Forms.Init(e);
+
+                Rg.Plugins.Popup.Popup.Init();
+                Xamarin.Forms.Forms.Init(e, Rg.Plugins.Popup.Popup.GetExtraAssemblies());
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

@@ -4,11 +4,19 @@
              x:Class="Admin.Pages.HomePageLandscape">
   <ContentView.Content>
       <StackLayout>
-            <Button Text="PRODUCT LIST"
+            <Button Text="DANH SÁCH SẢN PHẨM"
                     FontAttributes="Bold"
                     Style="{StaticResource LoginButtonStyle}"
                     CornerRadius="{StaticResource BigButtonCornerRadius}"
                     Command="{Binding NavigateProductListCommand}"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+
+            <Button Text="ĐƠN HÀNG ĐÃ NHẬN"
+                    FontAttributes="Bold"
+                    Style="{StaticResource LoginButtonStyle}"
+                    CornerRadius="{StaticResource BigButtonCornerRadius}"
+                    Command="{Binding NavigateOrderCommand}"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"/>
         </StackLayout>
