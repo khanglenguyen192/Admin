@@ -12,7 +12,6 @@
     <Style x:Key="NormalLabelStyle" TargetType="Label">
         <Setter Property="TextColor" Value="{StaticResource NormalTextColor}"/>
         <Setter Property="FontSize" Value="{StaticResource TitleTextSize}"/>
-        <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
     <Style x:Key="BoldNormalLabelStyle" TargetType="Label">
@@ -37,6 +36,16 @@
         <Setter Property="HeightRequest" Value="{StaticResource SmallButtonHeight}"/>
         <Setter Property="BackgroundColor" Value="{StaticResource PurpleButtonColor}"/>
         <Setter Property="CornerRadius" Value="{StaticResource BigButtonCornerRadius}"/>
+    </Style>
+
+    <Style TargetType="BoxView" x:Key="LineStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource BaseBackgroundColor}" />
+        <Setter Property="HeightRequest" Value="{StaticResource LineHeight}" />
+    </Style>
+    
+    <Style TargetType="BoxView" x:Key="VerticalLineStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorGrayStroke}" />
+        <Setter Property="WidthRequest" Value="{StaticResource LineHeight}" />
     </Style>
 
 </ResourceDictionary>

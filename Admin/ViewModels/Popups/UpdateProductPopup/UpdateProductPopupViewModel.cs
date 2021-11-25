@@ -1,22 +1,20 @@
 ﻿using Admin.Base.Services;
 using Admin.Base.ViewModels;
 using Admin.Models;
-using Newtonsoft.Json;
 using Rg.Plugins.Popup.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Admin.ViewModels.Popups.AddProductPopup
+namespace Admin.ViewModels
 {
-    public class AddProductPopupViewModel : BaseViewModel
+    public class UpdateProductPopupViewModel : BaseViewModel
     {
         private IPopupNavigation _popupNavigation;
-        private const string Url = "http://localhost:5000/products/detail";
-        private HttpClient client;
+
+        private Product _product { get; set; }
 
         private string _name;
         public string Name
@@ -138,85 +136,33 @@ namespace Admin.ViewModels.Popups.AddProductPopup
             }
         }
 
-        public AddProductPopupViewModel(INavigationService navigationService, IPopupNavigation popupNavigation)
+
+        public UpdateProductPopupViewModel(INavigationService navigationService, IPopupNavigation popupNavigation)
             : base(navigationService)
         {
             _popupNavigation = popupNavigation;
-            client = new HttpClient();
-            //Name = string.Empty;
-            //Img = string.Empty;
-            //Origin = string.Empty;
-            //Brand = string.Empty;
-            //Price = 0;
-            //Style = string.Empty;
-            //CategoryID = 1;
-            //Material = string.Empty;
-            //Size = string.Empty;
-            //Weight = 0;
-            //Accessories = string.Empty;
-            //Insurance = string.Empty;
-
-            Name = "Acus Stage Pre 3";
-            Img = "https://vietthuongshop.vn/image/cache/catalog/2-san-pham/amply/acus/amplifier-acus-stage-pre-3-1-400x400.jpg";
-            Origin = "USA";
-            Brand = "Acus";
-            Price = 17300000;
-            Style = "Default";
-            CategoryID = 7;
-            Material = "Gỗ";
-            Size = "Nhỏ";
-            Weight = 7;
-            Accessories = "none";
-            Insurance = "12 tháng";
         }
 
-        public ICommand NavigateAddCommand => new Command(async () =>
+        public void setProduct(Product product)
         {
-            if (Name.Equals(string.Empty))
-            {
-                return;
-            }
-            else if (Img.Equals(string.Empty))
-            {
-                return;
-            }
-            else if (Brand.Equals(string.Empty))
-            {
-                return;
-            }
-            else if (Insurance.Equals(string.Empty))
-            {
-                return;
-            }
-
-            string maxIdJson;
-            try
-            {
-                maxIdJson = await client.GetStringAsync(Url + "/max_id");
-            }
-            catch
-            {
-                maxIdJson = string.Empty;
-            }
-            
-            MaxProductId maxId = JsonConvert.DeserializeObject<MaxProductId>(maxIdJson);
-            int id = Int32.Parse(maxId.MaxId) + 1;
-            Product product = new Product(id, Name, Img, Origin, Brand, Price, Style, CategoryID, Material, Size, Weight, Accessories, Insurance);
-
-            PostProduct(product, Url);
-            await _popupNavigation.PopAsync();
-        });
+            //_product = product;
+            Name = product.Name;
+            Img = product.Img;
+            Origin = product.Origin;
+            Brand = product.Brand;
+            Price = product.Price;
+            Style = product.Style;
+            CategoryID = product.CategoryID;
+            Material = product.Material;
+            Size = product.Size;
+            Weight = product.Weight;
+            Accessories = product.Accessories;
+            Insurance = product.Insurance;
+        }
 
         public ICommand NavigateCloseCommand => new Command(async () =>
         {
             await _popupNavigation.PopAsync();
         });
-
-        protected async void PostProduct(Product product, string url)
-        {
-            var serializeItem = JsonConvert.SerializeObject(product);
-            StringContent body = new StringContent(serializeItem, Encoding.UTF8, "application/json");
-            await client.PostAsync(url, body);
-        }
     }
 }

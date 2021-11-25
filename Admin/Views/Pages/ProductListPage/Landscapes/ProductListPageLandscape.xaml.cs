@@ -73,6 +73,16 @@ namespace Admin.Pages
 
         public async void ItemEditClicked(object sender, EventArgs e)
         {
+            var item = (Button)sender;
+            int id = (int)item.CommandParameter;
+            for (int i = 0; i < DataSource.Count; i++)
+            {
+                if (DataSource[i].Id == id)
+                {
+                    await App.popupNavigation.PushAsync(new UpdateProductPopup(DataSource[i]));
+                    break;
+                }
+            }
         }
 
         public async void AddProductClicked(object sender, EventArgs e)

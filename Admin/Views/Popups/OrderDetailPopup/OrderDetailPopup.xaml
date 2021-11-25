@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="Admin.Popups.OrderDetailPopup"
+              xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+              CloseWhenBackgroundIsClicked="False">
+    <ContentPage.Content>
+        <Frame VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Margin="{StaticResource PopupPageMargin}"
+               CornerRadius="{StaticResource BaseCornerRadius}"
+               Padding="{StaticResource BigMargin}"
+               BackgroundColor="{StaticResource BaseWhiteColor}"
+               HeightRequest="600"
+               WidthRequest="600">
+            <StackLayout Spacing="{StaticResource BigRowSpacing}">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Label" BasedOn="{StaticResource BoldNormalLabelStyle}">
+
+                        </Style>
+                        <Style TargetType="BoxView" BasedOn="{StaticResource LineStyle}">
+
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+
+                <Label Text="CHI TIẾT ĐƠN HÀNG"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Start"
+                       FontSize="22"/>
+                
+                <ListView x:Name="OrderItemView"
+                          VerticalScrollBarVisibility="Always" 
+                          HasUnevenRows="True"
+                          SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowSpacing="{StaticResource SmallRowSpacing}"
+                                      Margin="{StaticResource NoMargin}"
+                                      Padding="{StaticResource NoPadding}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <BoxView Grid.Row="0" Grid.Column="0"
+                                             Grid.ColumnSpan="5"
+                                             Margin="{StaticResource NormalMarginBottom}"/>
+
+                                    <Frame Grid.Row="1" Grid.Column="0"
+                                           Grid.RowSpan="2"
+                                           Padding="{StaticResource NoPadding}"
+                                           Margin="{StaticResource SmallMarginRight}"
+                                           WidthRequest="60"
+                                           HeightRequest="80"
+                                           CornerRadius="{StaticResource BaseCornerRadius}">
+                                        <Image Source="{Binding Img}" 
+                                               Aspect="AspectFill"/>
+                                    </Frame>
+
+                                    <Label  Grid.Row="1" Grid.Column="1"
+                                            Grid.ColumnSpan="2"
+                                            Text="{Binding Name}"/>
+                                    <Label  Grid.Row="2" Grid.Column="1"
+                                            Style="{StaticResource NormalLabelStyle}"
+                                            Text="Đơn giá"/>
+                                    <Label  Grid.Row="2" Grid.Column="2"
+                                            Grid.ColumnSpan="2"
+                                            Text="{Binding Price}"/>
+
+                                    <Label  Grid.Row="2" Grid.Column="3"
+                                            Style="{StaticResource NormalLabelStyle}"
+                                            Text="Số lượng"/>
+
+                                    <Label  Grid.Row="2" Grid.Column="4"
+                                            Text="{Binding Quantity}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackLayout Orientation="Horizontal"
+                             Spacing="{StaticResource SmallColumnSpacing}"
+                             HorizontalOptions="EndAndExpand">
+                    <Label Text="TỔNG:"/>
+                    <Label Text="123000000"/>
+                </StackLayout>
+                
+                <Button Text="XÁC NHẬN"
+                        FontAttributes="Bold"
+                        Style="{StaticResource NormalButtonStyle}"
+                        Clicked="OnConfirmClicked"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</rg:PopupPage>

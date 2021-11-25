@@ -6,14 +6,15 @@
   <ContentView.Content>
         <StackLayout Padding="{StaticResource NormalMargin}"
                      Spacing="{StaticResource NormalRowSpacing}">
+
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <!--<Style TargetType="Button" BasedOn="{StaticResource NormalButtonStyle}">
+                    </Style>-->
+                </ResourceDictionary>
+            </StackLayout.Resources>
             <SearchBar Placeholder="Tìm kiếm sản phẩm"
                        Margin="{StaticResource NormalMarginBottom}"/>
-
-            <Button Text="Home"
-                    FontAttributes="Bold"
-                    Style="{StaticResource LoginButtonStyle}"
-                    CornerRadius="{StaticResource BigButtonCornerRadius}"
-                    Clicked="AddProductClicked"/>
 
             <StackLayout Orientation="Horizontal"
                          Padding="{StaticResource NoPadding}"
@@ -200,6 +201,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <Button Text="THÊM SẢN PHẨM"
+                    FontAttributes="Bold"
+                    Style="{StaticResource NormalButtonStyle}"
+                    Clicked="AddProductClicked"/>
         </StackLayout>
   </ContentView.Content>
 </ContentView>

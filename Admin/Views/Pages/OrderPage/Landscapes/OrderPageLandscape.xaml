@@ -1,12 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Admin.Pages.OrderPageLandscape">
+             x:Class="Admin.Pages.OrderPageLandscape"
+             BackgroundColor="{StaticResource BaseBackgroundColor}">
     <ContentView.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="{StaticResource NormalMargin}"
+                     Spacing="{StaticResource NormalRowSpacing}">
+
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <!--<Style TargetType="Button" BasedOn="{StaticResource NormalButtonStyle}">
+                    </Style>-->
+                    <Style TargetType="Label" BasedOn="{StaticResource NormalLabelStyle}">
+                        
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+
+            <StackLayout Orientation="Horizontal"
+                         Padding="{StaticResource NoPadding}"
+                         Spacing="{StaticResource SmallColumnSpacing}"
+                         HorizontalOptions="Start"
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="Tổng đơn hàng:"/>
+                <Label Text="{Binding Receive}"
+                       x:Name="debugText"/>
+            </StackLayout>
+
+            <ListView x:Name="OrderListView"
+                      VerticalScrollBarVisibility="Always" 
+                      HasUnevenRows="True"
+                      SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="{StaticResource NoPadding}"
+                                   Margin="{StaticResource NormalMarginBottom}"
+                                   CornerRadius="{StaticResource BaseCornerRadius}"
+                                   BackgroundColor="{StaticResource BaseWhiteColor}">
+                                <Grid Padding="{StaticResource SmallMargin}"
+                                      Margin="{StaticResource NoMargin}"
+                                      RowSpacing="{StaticResource SmallRowSpacing}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="15*"/>
+                                        <ColumnDefinition Width="35*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Row="0" Grid.Column="0"
+                                          Padding="{StaticResource NoPadding}"
+                                          ColumnSpacing="{StaticResource BigColumnSpacing}"
+                                          RowSpacing="{StaticResource SmallRowSpacing}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Text="Mã đơn hàng"
+                                               Grid.Row="0" Grid.Column="0"/>
+                                        <Label Text="{Binding OrderId}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="Ghi chú"
+                                               Grid.Row="1" Grid.Column="0"/>
+                                        <Label Text="{Binding Detail}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="1" Grid.Column="1"/>
+                                        <Label Text="Thanh toán"
+                                               Grid.Row="2" Grid.Column="0"/>
+                                        <Label Text="{Binding PaymentMethod}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="2" Grid.Column="1"/>
+                                        <Label Text="Trạng thái"
+                                               Grid.Row="3" Grid.Column="0"/>
+                                        <Label Text="{Binding Status}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="3" Grid.Column="1"/>
+
+                                    </Grid>
+
+                                    <Grid Grid.Row="0" Grid.Column="1"
+                                          Padding="{StaticResource NoPadding}"
+                                          ColumnSpacing="{StaticResource BigColumnSpacing}"
+                                          RowSpacing="{StaticResource SmallRowSpacing}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Text="Tên khách hàng"
+                                               Grid.Row="0" Grid.Column="0"/>
+                                        <Label Text="{Binding CustomerName}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="Số điện thoại"
+                                               Grid.Row="1" Grid.Column="0"/>
+                                        <Label Text="{Binding CustomerPhone}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="1" Grid.Column="1"/>
+                                        <Label Text="Email"
+                                               Grid.Row="2" Grid.Column="0"/>
+                                        <Label Text="{Binding CustomerEmail}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="2" Grid.Column="1"/>
+                                        <Label Text="Địa chỉ"
+                                               Grid.Row="3" Grid.Column="0"/>
+                                        <Label Text="{Binding CustomerAddress}"
+                                               Style="{StaticResource BoldNormalLabelStyle}"
+                                               Grid.Row="3" Grid.Column="1"/>
+                                    </Grid>
+
+                                    <Button Text="CHI TIẾT"
+                                            Grid.Row="0" Grid.Column="2"
+                                            FontAttributes="Bold"
+                                            WidthRequest="100"
+                                            HeightRequest="50"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            CornerRadius="{StaticResource BaseButtonCornerRadius}"
+                                            CommandParameter="{Binding OrderId}"
+                                            Clicked="OrderDetailClicked"/>
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

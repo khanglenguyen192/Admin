@@ -176,4 +176,6 @@
     <Thickness
         x:Key="PopupPageMargin">89,60,89,60</Thickness>
 
+    <x:Double x:Key="LineHeight">1</x:Double>
+
 </ResourceDictionary>

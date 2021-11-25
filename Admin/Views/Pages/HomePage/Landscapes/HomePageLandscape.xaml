@@ -1,24 +1,45 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="{StaticResource BaseBackgroundColor}"
              x:Class="Admin.Pages.HomePageLandscape">
   <ContentView.Content>
-      <StackLayout>
-            <Button Text="DANH SÁCH SẢN PHẨM"
-                    FontAttributes="Bold"
-                    Style="{StaticResource LoginButtonStyle}"
-                    CornerRadius="{StaticResource BigButtonCornerRadius}"
-                    Command="{Binding NavigateProductListCommand}"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand"/>
+      <Grid>
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Button" BasedOn="{StaticResource NormalButtonStyle}">
+                        <Setter Property="WidthRequest" Value="300"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
 
-            <Button Text="ĐƠN HÀNG ĐÃ NHẬN"
-                    FontAttributes="Bold"
-                    Style="{StaticResource LoginButtonStyle}"
-                    CornerRadius="{StaticResource BigButtonCornerRadius}"
-                    Command="{Binding NavigateOrderCommand}"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand"/>
-        </StackLayout>
+            <Frame Grid.Row="0"
+                   BackgroundColor="{StaticResource BaseWhiteColor}"
+                   CornerRadius="{StaticResource BaseCornerRadius}"
+                   WidthRequest="{StaticResource LoginLandscapeWidth}"
+                   HeightRequest="{StaticResource LoginLandscapeHeight}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center">
+                <StackLayout Spacing="{StaticResource NormalRowSpacing}"
+                             HorizontalOptions="Center"
+                             VerticalOptions="CenterAndExpand">
+                    <Button Text="DANH SÁCH SẢN PHẨM"
+                            Command="{Binding NavigateProductListCommand}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+
+                    <Button Text="ĐƠN HÀNG ĐÃ NHẬN"
+                            Command="{Binding NavigateOrderCommand}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+
+                    <Button Text="ĐĂNG XUẤT"
+                            Command="{Binding NavigateLogOutCommand}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
   </ContentView.Content>
 </ContentView>

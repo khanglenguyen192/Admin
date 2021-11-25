@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              x:Class="Admin.Popups.AddProductPopup"
-              xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-              xmlns:component="clr-namespace:Admin.Base.Widgets"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Admin.Popups.UpdateProductPopup"
+             xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:component="clr-namespace:Admin.Base.Widgets"
               CloseWhenBackgroundIsClicked="False">
     <ContentPage.Content>
         <Frame VerticalOptions="Center"
@@ -15,9 +15,6 @@
                HeightRequest="600"
                WidthRequest="600">
             <StackLayout Spacing="{StaticResource BigRowSpacing}">
-                <!--<Label Text="HELLO"
-                       x:Name="debugTest"/>-->
-
                 <StackLayout.Resources>
                     <ResourceDictionary>
                         <Style TargetType="Label" BasedOn="{StaticResource BoldNormalLabelStyle}">
@@ -25,12 +22,12 @@
                         </Style>
                     </ResourceDictionary>
                 </StackLayout.Resources>
-
-                <Label Text="THÊM SẢM PHẨM"
+                
+                <Label Text="CẬP NHẬT SẢM PHẨM"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="Start"
                        FontSize="22"/>
-
+                
                 <Grid ColumnSpacing="{StaticResource NormalColumnSpacing}"
                       RowSpacing="{StaticResource NormalRowSpacing}"
                       HorizontalOptions="Center"
@@ -129,14 +126,14 @@
                 </Grid>
 
 
-                    <Grid ColumnSpacing="{StaticResource NormalColumnSpacing}"
+                <Grid ColumnSpacing="{StaticResource NormalColumnSpacing}"
                       RowSpacing="{StaticResource NormalRowSpacing}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Text="THÊM"
+                    <Button Text="CẬP NHẬT"
                             Grid.Column="0"
                             FontAttributes="Bold"
                             Style="{StaticResource NormalButtonStyle}"
@@ -150,6 +147,8 @@
                             TextColor="{StaticResource BaseBlackColor}"
                             Command="{Binding NavigateCloseCommand}"/>
                 </Grid>
+
+
             </StackLayout>
         </Frame>
     </ContentPage.Content>

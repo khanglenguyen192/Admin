@@ -32,12 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\Popups\UpdateProductPopup\" />
     <Folder Include="Views\Pages\HomePage\Portraits\" />
     <Folder Include="Views\Pages\LoginPage\Portraits\" />
     <Folder Include="Views\Pages\OrderPage\Portratis\" />
     <Folder Include="Views\Pages\ProductListPage\Portratis\" />
-    <Folder Include="Views\Popups\UpdateProductPopup\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +61,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Popups\AddProductPopup\AddProductPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\OrderDetailPopup\OrderDetailPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\UpdateProductPopup\UpdateProductPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -24,13 +24,11 @@ namespace Admin
             NavigationService.Register(nameof(ProductListPage), typeof(ProductListPage));
             NavigationService.Register(nameof(OrderPage), typeof(OrderPage));
 
-            NavigationService.Register(nameof(AddProductPopup), typeof(AddProductPopup));
-
             //MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(LoginPage));
 
-            //MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(HomePage));
+            MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(HomePage));
 
-            MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(ProductListPage));
+            //MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(ProductListPage));
 
         }
 

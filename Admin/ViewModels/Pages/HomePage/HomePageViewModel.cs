@@ -25,5 +25,10 @@ namespace Admin.ViewModels
         {
             await _navigationService.NavigateAsync(nameof(OrderPage));
         });
+
+        public ICommand NavigateLogOutCommand => new Command(async () =>
+        {
+            await _navigationService.GoBack();
+        });
     }
 }

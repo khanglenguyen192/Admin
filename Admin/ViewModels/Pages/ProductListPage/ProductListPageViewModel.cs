@@ -78,7 +78,7 @@ namespace Admin.ViewModels
 
         public ICommand NavigateRemoveCommand => new Command( (e) =>
         {
-            var item = (e as Product);
+            // var item = (e as Product);
 
             //for (int i = 0; i < DataSource.Count; i++)
             //{
