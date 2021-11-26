@@ -1,9 +1,12 @@
 ﻿using Admin.Base.Services;
 using Admin.Base.ViewModels;
 using Admin.Models;
+using Admin.Pages;
+using Newtonsoft.Json;
 using Rg.Plugins.Popup.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -14,7 +17,17 @@ namespace Admin.ViewModels
     {
         private IPopupNavigation _popupNavigation;
 
-        private Product _product { get; set; }
+        private const string Url = "http://localhost:5000/products/detail";
+
+        private int _id;
+        public int Id
+        {
+            get { return _id; }
+            set
+            {
+                SetProperty(ref _id, value);
+            }
+        }
 
         private string _name;
         public string Name
@@ -145,7 +158,7 @@ namespace Admin.ViewModels
 
         public void setProduct(Product product)
         {
-            //_product = product;
+            Id = product.Id;
             Name = product.Name;
             Img = product.Img;
             Origin = product.Origin;
@@ -160,9 +173,43 @@ namespace Admin.ViewModels
             Insurance = product.Insurance;
         }
 
+        public ICommand NavigateUpdateCommand => new Command(async () =>
+        {
+            if (Name.Equals(string.Empty))
+            {
+                return;
+            }
+            else if (Img.Equals(string.Empty))
+            {
+                return;
+            }
+            else if (Brand.Equals(string.Empty))
+            {
+                return;
+            }
+            else if (Insurance.Equals(string.Empty))
+            {
+                return;
+            }
+
+            Product product = new Product(Id, Name, Img, Origin, Brand, Price, Style, CategoryID, Material, Size, Weight, Accessories, Insurance);
+            PutProduct(product, Url);
+
+            ProductListPageLandscape.ReloadPage();
+            await _popupNavigation.PopAsync();
+        });
+
         public ICommand NavigateCloseCommand => new Command(async () =>
         {
             await _popupNavigation.PopAsync();
         });
+
+        protected async void PutProduct(Product product, string url)
+        {
+            HttpClient client = new HttpClient();
+            var serializeItem = JsonConvert.SerializeObject(product);
+            StringContent body = new StringContent(serializeItem, Encoding.UTF8, "application/json");
+            await client.PutAsync(url, body);
+        }
     }
 }

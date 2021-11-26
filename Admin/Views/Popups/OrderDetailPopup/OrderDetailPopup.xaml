@@ -29,7 +29,9 @@
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="Start"
                        FontSize="22"/>
-                
+
+                <!--<Label x:Name="debugTest"/>-->
+
                 <ListView x:Name="OrderItemView"
                           VerticalScrollBarVisibility="Always" 
                           HasUnevenRows="True"
@@ -45,7 +47,7 @@
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
 
                                     <Grid.RowDefinitions>
@@ -95,7 +97,8 @@
                              Spacing="{StaticResource SmallColumnSpacing}"
                              HorizontalOptions="EndAndExpand">
                     <Label Text="TỔNG:"/>
-                    <Label Text="123000000"/>
+                    <Label Text="0" x:Name="totalPrice"/>
+                    <Label Text="VNĐ"/>
                 </StackLayout>
                 
                 <Button Text="XÁC NHẬN"

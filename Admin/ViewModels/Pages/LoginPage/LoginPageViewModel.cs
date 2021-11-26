@@ -82,6 +82,8 @@ namespace Admin.ViewModels
             {
                 if (Account.Equals(DataSource[i].UserName) && Password.Equals(DataSource[i].Password))
                 {
+                    Account = string.Empty;
+                    Password = string.Empty;
                     await _navigationService.NavigateAsync(nameof(HomePage));
                     break;
                 }

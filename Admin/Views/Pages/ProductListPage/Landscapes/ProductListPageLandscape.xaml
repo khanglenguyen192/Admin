@@ -13,8 +13,7 @@
                     </Style>-->
                 </ResourceDictionary>
             </StackLayout.Resources>
-            <SearchBar Placeholder="Tìm kiếm sản phẩm"
-                       Margin="{StaticResource NormalMarginBottom}"/>
+            <SearchBar Placeholder="Tìm kiếm sản phẩm"/>
 
             <StackLayout Orientation="Horizontal"
                          Padding="{StaticResource NoPadding}"

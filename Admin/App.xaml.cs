@@ -24,9 +24,9 @@ namespace Admin
             NavigationService.Register(nameof(ProductListPage), typeof(ProductListPage));
             NavigationService.Register(nameof(OrderPage), typeof(OrderPage));
 
-            //MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(LoginPage));
+            MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(LoginPage));
 
-            MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(HomePage));
+            //MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(HomePage));
 
             //MainPage = ((ViewNavigationService)NavigationService).SetRootPage(nameof(ProductListPage));
 

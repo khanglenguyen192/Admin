@@ -1,6 +1,7 @@
 ﻿using Admin.Base.Services;
 using Admin.Base.ViewModels;
 using Admin.Models;
+using Admin.Pages;
 using Newtonsoft.Json;
 using Rg.Plugins.Popup.Contracts;
 using System;
@@ -202,8 +203,9 @@ namespace Admin.ViewModels.Popups.AddProductPopup
             MaxProductId maxId = JsonConvert.DeserializeObject<MaxProductId>(maxIdJson);
             int id = Int32.Parse(maxId.MaxId) + 1;
             Product product = new Product(id, Name, Img, Origin, Brand, Price, Style, CategoryID, Material, Size, Weight, Accessories, Insurance);
-
             PostProduct(product, Url);
+
+            ProductListPageLandscape.ReloadPage();
             await _popupNavigation.PopAsync();
         });
 

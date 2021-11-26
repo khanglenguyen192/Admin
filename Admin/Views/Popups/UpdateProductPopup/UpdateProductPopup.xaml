@@ -137,7 +137,7 @@
                             Grid.Column="0"
                             FontAttributes="Bold"
                             Style="{StaticResource NormalButtonStyle}"
-                            Command="{Binding NavigateAddCommand}"/>
+                            Command="{Binding NavigateUpdateCommand}"/>
 
                     <Button Text="HỦY"
                             Grid.Column="1"

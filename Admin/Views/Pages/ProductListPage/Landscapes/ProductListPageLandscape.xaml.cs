@@ -20,12 +20,27 @@ namespace Admin.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductListPageLandscape : ContentView
     {
+        private static ProductListPageLandscape _productListPageLandscape;
+
         public ObservableCollection<Product> DataSource { get; set; }
         private HttpClient client;
-
         private const string ProductUrl = "http://localhost:5000/products/detail";
 
-        public ProductListPageLandscape()
+        public static ProductListPageLandscape getProductListPageLandscape()
+        {
+            if (_productListPageLandscape == null)
+            {
+                _productListPageLandscape = new ProductListPageLandscape();
+            }
+            return _productListPageLandscape;
+        }
+
+        public static void ReloadPage()
+        {
+            _productListPageLandscape.getListProduct();
+        }
+
+        private ProductListPageLandscape()
         {
             InitializeComponent();
             getListProduct();

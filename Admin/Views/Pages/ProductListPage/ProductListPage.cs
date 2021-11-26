@@ -17,12 +17,12 @@ namespace Admin.Pages
 
         protected override void SetupLandscapeLayout()
         {
-            this.Content = new ProductListPageLandscape();
+            this.Content = ProductListPageLandscape.getProductListPageLandscape();
         }
 
         protected override void SetupPortraitLayout()
         {
-            this.Content = new ProductListPageLandscape();
+            this.Content = ProductListPageLandscape.getProductListPageLandscape();
         }
     }
 }
