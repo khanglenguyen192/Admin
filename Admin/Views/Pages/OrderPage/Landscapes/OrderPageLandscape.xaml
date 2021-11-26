@@ -22,8 +22,10 @@
                          Spacing="{StaticResource SmallColumnSpacing}"
                          HorizontalOptions="Start"
                          VerticalOptions="CenterAndExpand">
-                <Label Text="Tổng đơn hàng:"/>
+                <Label Text="Tổng số đơn hàng:"
+                       Style="{StaticResource BoldNormalLabelStyle}"/>
                 <Label Text="{Binding Receive}"
+                       Style="{StaticResource BoldNormalLabelStyle}"
                        x:Name="debugText"/>
             </StackLayout>
 
